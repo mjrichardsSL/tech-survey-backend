@@ -2,6 +2,7 @@ module.exports = async function (context, req) {
     const projectId = req.params.projectId;
     const lastSurveys = {
         "1": {
+            surveyId: 1,
             projectId: 2,
             clientId: 1,
             platformId: 1,
@@ -11,6 +12,7 @@ module.exports = async function (context, req) {
             kimbleUrl: "exampleUrl"
         },
         "2": {
+            surveyId: 2,
             projectId: 2,
             clientId: 1,
             platformId: 1,
@@ -33,7 +35,7 @@ module.exports = async function (context, req) {
     context.headers = headers;
     context.res = {
         // status: 200, /* Defaults to 200 */
-        status: status,
-        body: responseBody
+        status: 200,
+        body: { data: responseBody }
     };
 }

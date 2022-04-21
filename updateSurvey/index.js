@@ -1,8 +1,7 @@
 module.exports = async function (context, req) {
     const surveyId = req.params.surveyId;
-
     const { projectId, clientId, platformId, accountOwnerId, year, month, techLeadId, tech, kimbleUrl} = req.body;
-    const responseBody = lastSurveys[projectId];
+    const responseBody = {};
 
     context.log.info(`Update Survey Data`);
     const status = 200;
@@ -18,6 +17,6 @@ module.exports = async function (context, req) {
     context.res = {
         // status: 200, /* Defaults to 200 */
         status: status,
-        body: responseBody
+        body: { data: responseBody }
     };
 }
